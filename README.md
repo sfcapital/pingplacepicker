@@ -1,5 +1,5 @@
 # PING - Because Ping Is Not Google's Place Picker 😉
-[![](https://jitpack.io/v/rtchagas/pingplacepicker.svg)](https://jitpack.io/#rtchagas/pingplacepicker)
+[![](https://jitpack.io/v/rtchagas/pingplacepicker.svg)](https://jitpack.io/#rtchagas/pingplacepicker) [![](https://img.shields.io/badge/MinSDK-19-blue)](#)
 
  
 If you're here looking for a place picker you have probably read this:
@@ -162,6 +162,10 @@ As some features are charged by Google, you can alter the default **PING** Place
 
 <!-- 0.007 USD per each (7.00 USD per 1000) -->  
 <bool name="show_confirmation_map">true</bool>
+
+<!-- If true, the map will automatically center (pan) to
+     the selected marker -->
+<bool name="auto_center_on_marker_click">false</bool>
 ```
 
 ## Contribute

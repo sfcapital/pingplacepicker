@@ -113,7 +113,7 @@ class GoogleMapsRepository constructor(
      * [Places SDK for Android Usage and
        Billing](https://developers.google.com/maps/documentation/geocoding/usage-and-billing#pricing-for-the-geocoding-api)
      */
-    override fun getPlaceByLocation(location: LatLng): Single<Place?> {
+    override fun getPlaceByLocation(location: LatLng): Single<Place> {
 
         val paramLocation = "${location.latitude},${location.longitude}"
 
@@ -122,7 +122,9 @@ class GoogleMapsRepository constructor(
                     if (("OK" == result.status) && result.results.isNotEmpty()) {
                         return@flatMap getPlaceById(result.results[0].placeId)
                     }
-                    return@flatMap Single.just(null)
+                    return@flatMap Single.just(PlaceFromCoordinates(
+                            location.latitude,
+                            location.longitude))
                 }
     }
 
